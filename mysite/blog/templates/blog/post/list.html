@@ -3,7 +3,6 @@
 {% block title %}My Blog{% endblock %}
 
 {% block content %}
-
 <h1>My Blog</h1>
 {% for post in posts %}
     <h2>
@@ -16,5 +15,6 @@
     </p>
     {{ post.body|truncatewords:30|linebreaks }}
 {% endfor %}
-{% include "pagination.html" with page=posts %}
+{% comment %} {% include "pagination.html" with page=posts %} {% endcomment %}
+{% include "pagination.html" with page=page_obj %}
 {% endblock %}
